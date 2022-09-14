@@ -4,14 +4,17 @@ import { Article } from './Article';
 import { Form } from './Form';
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
+
 export const App = () => {
 
 	const [pages, setPages] = useState([]);
+	//set the clicking states
 	const [isClicked, setIsClicked] = useState(false);
 	//set the state for getting article data (articleData, setArticleData)
-	const [articleData, setArticleData] = useState();
+	const [articleData, setArticleData] = useState(null);
 	//set a new state boolean for when an article is added
 	const [isAddingArticle, setIsAddingArticle] = useState(false)
+
 	async function fetchPages(){
 		try {
 			const response = await fetch(`${apiURL}/wiki`);
