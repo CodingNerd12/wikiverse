@@ -10,6 +10,7 @@ export const Form = ({setIsAddingArticle, fetchPages }) => {
     const [tags, setTags] = useState("");
 
 
+
 // make the event event handling for the post method 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -28,15 +29,19 @@ export const Form = ({setIsAddingArticle, fetchPages }) => {
            tags : tags,
             })
           });
+
+          
           const data = await response.json();
           fetchPages();
-          //Reset the state like in mythical Creatures
+          //Reset the state
           setName("");
           setEmail("");
           setTitle("");
           setContent("");
           setTags("");
     };
+
+    
         return (
             <>
             {/* You need to callt he form and handle the submitions */}
@@ -66,6 +71,7 @@ export const Form = ({setIsAddingArticle, fetchPages }) => {
                 <button type="submit">Create New Post</button>
                 {/* Is the article(?) setIsAddingArticle onClick button */}
                 <button onClick={() => setIsAddingArticle(false)}>Back to Wiki List!</button>
+               
               </form>         
 
             </>

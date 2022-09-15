@@ -14,6 +14,7 @@ export const App = () => {
 	const [articleData, setArticleData] = useState(null);
 	//set a new state boolean for when an article is added
 	const [isAddingArticle, setIsAddingArticle] = useState(false)
+	
 
 	async function fetchPages() {
 		try {
@@ -33,7 +34,7 @@ export const App = () => {
 				<Article articleData={articleData} setIsClicked={setIsClicked} />
 			) :
 				isAddingArticle ? (
-					<Form setIsAddingArticle={setIsAddingArticle} />
+					<Form setIsAddingArticle={setIsAddingArticle} fetchPages= {fetchPages}/>
 				) : (
 					<div className='showPageHeader'>
 						<h1>WikiVerse</h1>
@@ -41,7 +42,7 @@ export const App = () => {
 						<div className='articleList'>
 							<PagesList pages={pages} setArticleData={setArticleData} setIsClicked={setIsClicked} />
 							{/* Add the button for adding an Article */}
-							<button onClick={() => setIsAddingArticle(true)}>Create Page</button>
+							<button onClick={() => setIsAddingArticle(true)}>Create a Page</button>
 							{/* Add the button for updating an Article */}
 						</div>
 					</div>
