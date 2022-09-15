@@ -1,7 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  background-color: rgb(223, 223, 223);
+  background-color: rgb(169, 138, 255);
 }
 
 main {
@@ -21,4 +21,55 @@ main {
   flex-direction: column;
   justify-content: left;
   align-items: left;
+}
+
+.authorArticle {
+  display: flex;
+  font-size: 24px;
+  height: 35px;
+}
+
+.pubDate {
+  display: flex;
+  font-size: 18px;
+  padding: 0.5%;
+}
+
+.contentArticle {
+  display: flex;
+  font-size: 16px;
+  padding: 0.25%;
+}
+
+.articleDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.articleButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+form {
+  background-color: rgb(179, 171, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+
 }

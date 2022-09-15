@@ -44,7 +44,7 @@ export const Form = ({setIsAddingArticle, fetchPages }) => {
     
         return (
             <>
-            {/* You need to callt he form and handle the submitions */}
+            {/* You need to call the form and handle the submitions */}
               <form onSubmit={handleSubmit}>
                 <input value ={name} type = "text"
                 // when the event changes (onChange) what happens? 
