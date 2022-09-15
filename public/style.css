@@ -9,3 +9,16 @@ main {
   height: 100vh;
 }
 
+.showPageHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.articleList {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}

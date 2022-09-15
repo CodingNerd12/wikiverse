@@ -15,7 +15,7 @@ export const App = () => {
 	//set a new state boolean for when an article is added
 	const [isAddingArticle, setIsAddingArticle] = useState(false)
 
-	async function fetchPages(){
+	async function fetchPages() {
 		try {
 			const response = await fetch(`${apiURL}/wiki`);
 			const pagesData = await response.json();
@@ -28,22 +28,25 @@ export const App = () => {
 		fetchPages();
 	}, []);
 	return (
-		<main>	
+		<main>
 			{isClicked ? (
-			<Article articleData={articleData}  setIsClicked={setIsClicked} />
-			) : 
-			isAddingArticle ? (
-				<Form  setIsAddingArticle={setIsAddingArticle} />
-			) : (
-				<div>
-			<h1>WikiVerse</h1>
-			<h2>An interesting 📚</h2>
-				<PagesList pages={pages} setArticleData={setArticleData} setIsClicked={setIsClicked} />
-				{/* Add the button for adding an Article */}
-				<button onClick={() => setIsAddingArticle(true)}>Create Page</button>
-				</div>
-			)}
-			
+				<Article articleData={articleData} setIsClicked={setIsClicked} />
+			) :
+				isAddingArticle ? (
+					<Form setIsAddingArticle={setIsAddingArticle} />
+				) : (
+					<div className='showPageHeader'>
+						<h1>WikiVerse</h1>
+						<h2>📚 View Pages Here 📚</h2>
+						<div className='articleList'>
+							<PagesList pages={pages} setArticleData={setArticleData} setIsClicked={setIsClicked} />
+							{/* Add the button for adding an Article */}
+							<button onClick={() => setIsAddingArticle(true)}>Create Page</button>
+							{/* Add the button for updating an Article */}
+						</div>
+					</div>
+				)}
+
 		</main>
 	)
 }
