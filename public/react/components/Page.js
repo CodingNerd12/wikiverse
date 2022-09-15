@@ -19,4 +19,3 @@ export const Page = ({ page, setArticleData, setIsClicked }) => {
     <h3 onClick={() => displayAuthorData(page)}>{page.title}</h3>
   </>
 } 
-	
